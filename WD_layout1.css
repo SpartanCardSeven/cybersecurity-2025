@@ -1,0 +1,240 @@
+/* =========================
+   WD_layout1.css
+   Purpose: Styling for the Start (home) page: card wrapper, banner, and icon grid.
+   ========================= */
+
+/* -------------------------
+   Page basics
+   Ensure body uses base background and default font.
+   ------------------------- */
+@charset "utf-8";
+body {
+  margin: 0;
+  background: var(--page-bg);
+  font-family: inherit;
+  color: var(--text);
+}
+
+/* -------------------------
+   Start wrapper & card
+   Creates a white centered card like your screenshot.
+   ------------------------- */
+.start-wrapper {
+  width: 94%;
+  max-width: var(--max-width);
+  margin: 28px auto;
+  padding: 0;
+}
+.start-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  overflow: visible;
+}
+
+/* -------------------------
+   Banner inside card
+   Banner is smaller and constrained; keeps aspect ratio.
+   ------------------------- */
+.start-card header { text-align: center; margin-bottom: 12px; }
+.start-card header img {
+  width: 100%;
+  max-width: 980px;
+  max-height: 180px;     /* controls banner visual height */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(31,41,55,0.06);
+}
+
+/* -------------------------
+   Icon grid
+   Flex-wrapped grid for large icons + small text links below.
+   ------------------------- */
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 22px;
+  margin: 18px 0 8px 0;
+}
+
+/* Large square icon cards (first row) */
+.icon-large {
+  width: 160px;
+  height: 160px;
+  background: #fff;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(31,41,55,0.06);
+  padding: 10px;
+  text-decoration: none;
+}
+.icon-large img { width: 100%; height: 100%; object-fit: contain; border-radius: 6px; }
+
+/* Small text links styled as cards (second row) */
+.icon-small {
+  width: 140px;
+  height: 48px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6px 10px;
+  box-shadow: 0 6px 14px rgba(31,41,55,0.05);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+.icon-small img { width: 40px; height: 40px; object-fit: contain; }
+.icon-small span { font-size: 0.95rem; color: var(--text); }
+
+/* -------------------------
+   Card footer
+   Light separator and muted footer text inside the card.
+   ------------------------- */
+.start-card footer {
+  margin-top: 18px;
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(31,41,55,0.04);
+  color: var(--muted);
+}
+
+/* -------------------------
+   Responsive tweaks
+   Reduce icon sizes and padding on smaller screens.
+   ------------------------- */
+@media (max-width: 700px) {
+  .icon-large { width: 130px; height: 130px; }
+  .icon-small { width: 100%; justify-content: center; }
+  .icon-grid { gap: 14px; }
+  .start-card { padding: 14px; }
+}
+@media (max-width: 420px) {
+  .icon-large { width: 110px; height: 110px; }
+  .start-card header img { max-height: 140px; }
+}
+@charset "utf-8";
+/* ============================================================
+   WD_layout1.css — Modern, Clean, Complete Replacement
+   Purpose:
+   - Provides page-specific layout options for “Layout 1” pages.
+   - Works together with WD_base.css (which handles global layout).
+   - Fully responsive across mobile, tablet, and desktop.
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 — MOBILE-FIRST BASE LAYOUT (Default)
+   These styles apply to all devices unless overridden later.
+   ============================================================ */
+
+/* Ensures page content stays centered and readable */
+.page-layout {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Layout 1 uses a simple single-column design on mobile */
+.layout1-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Images inside layout areas are always responsive */
+.layout1-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Navigation blocks designed for graphical link buttons */
+.layout1-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.layout1-nav a img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ============================================================
+   SECTION 2 — TABLET LAYOUT (min-width: 481px)
+   Adds spacing and improves layout flow for medium screens.
+   ============================================================ */
+@media only screen and (min-width: 481px) {
+
+    /* Slightly wider layout with cleaner spacing */
+    .page-layout {
+        max-width: 900px;
+        padding: 25px;
+    }
+
+    /* Better-balanced spacing in layout content */
+    .layout1-content {
+        gap: 25px;
+    }
+
+    /* Navigation buttons become a grid instead of long column */
+    .layout1-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .layout1-nav a {
+        flex: 1 1 calc(33% - 15px); /* Three per row */
+    }
+}
+
+
+/* ============================================================
+   SECTION 3 — DESKTOP LAYOUT (min-width: 769px)
+   Creates a two-column page layout for larger screens.
+   ============================================================ */
+@media only screen and (min-width: 769px) {
+
+    /* Max width expands for desktop view */
+    .page-layout {
+        max-width: 1100px;
+    }
+
+    /* Two-column layout for content:
+       LEFT: main content
+       RIGHT: navigation or sidebar */
+    .layout1-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .layout1-main {
+        flex: 2;
+    }
+
+    .layout1-side {
+        flex: 1;
+    }
+
+    /* Sidebar navigation becomes vertical list */
+    .layout1-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .layout1-nav a {
+        flex: none;
+    }
+}

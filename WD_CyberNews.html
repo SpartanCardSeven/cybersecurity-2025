@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News</title>
+
+    <!-- Shared base styles -->
+    <link rel="stylesheet" href="WD_base.css">
+
+    <!-- Interior layout styles -->
+    <link rel="stylesheet" href="WD_layout_content.css">
+
+    <!-- Responsive YouTube embed styling -->
+    <style>
+        /* Responsive video wrapper (keeps 16:9 ratio) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 18px 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ============================
+         Banner
+         ============================ -->
+    <header>
+        <img src="BannerStartPg.png" alt="Cybersecurity Banner">
+    </header>
+
+    <!-- ============================
+         Top Navigation
+         ============================ -->
+    <nav class="topnav">
+        <a href="WD_Start.html">Home</a>
+        <a href="WD_Resources.html">Resources</a>
+        <a href="WD_Security.html">Security</a>
+        <a href="WD_Tips.html">Tips</a>
+        <a href="WD_Threats.html">Threats</a>
+        <a href="WD_CyberNews.html">News</a>
+        <a href="WD_About.html">About</a>
+    </nav>
+
+    <!-- ============================================================
+         Content Card
+         ============================================================ -->
+    <div class="content-card">
+        <h1>Cybersecurity News</h1>
+
+        <p class="lead">
+            Stay up-to-date with the latest cybersecurity trends, incidents, and reports.
+        </p>
+
+        <h2>Latest Stories</h2>
+        <ul>
+            <li>Major company announces new data protection protocols.</li>
+            <li>New ransomware variant discovered spreading globally.</li>
+            <li>Researchers reveal a new vulnerability affecting IoT devices.</li>
+            <li>AI-driven cyberattacks continue rising in 2025.</li>
+        </ul>
+
+        <!-- ======================================================
+             Responsive YouTube Video
+             ====================================================== -->
+        <h2>Featured Cybersecurity Video</h2>
+        <p>Watch this video to learn more about recent cybersecurity developments:</p>
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/Br1kD2KbnIk"
+                title="Cybersecurity Threats 2025"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- ============================
+             News Image
+             ============================ -->
+        <h2>News Feature Image</h2>
+        <img src="REPLACE.PNG" alt="Cybersecurity News Image" style="width:100%; border-radius:6px;">
+    </div>
+
+    <!-- ============================
+         Footer
+         ============================ -->
+    <div class="page-footer">
+        Tavish Skelton &bull; Web Design &bull; MACC
+    </div>
+
+</div>
+
+</body>
+</html>

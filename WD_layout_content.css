@@ -1,0 +1,132 @@
+/* =========================
+   WD_layout_content.css
+   Purpose: Layout for interior pages (Resources, Security, Tips, etc.)
+   Includes banner, top navigation, centered content card, and footer.
+   ========================= */
+
+/* -------------------------
+   Page & banner
+   Container-level banner sizing matches the home page banner.
+   ------------------------- */
+body { margin: 0; background: var(--page-bg); color: var(--text); font-family: inherit; }
+
+.container header { text-align: center; margin-bottom: 12px; }
+.container header img {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  max-height: 180px;     /* matches home banner height for consistency */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+/* -------------------------
+   Top navigation bar
+   Light-blue rounded nav with centered links.
+   ------------------------- */
+.topnav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(31,41,55,0.04);
+  margin-bottom: 18px;
+}
+.topnav a {
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.topnav a:hover { background: rgba(255,255,255,0.12); }
+
+/* -------------------------
+   Centered content card
+   White card that holds the page's main content (text, lists, tables).
+   ------------------------- */
+.content-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  min-height: 280px;
+}
+.content-card h1 { margin-top: 0; font-size: 1.8rem; }
+.content-card h2 { margin-top: 1.1rem; font-size: 1.15rem; }
+.content-card p, .content-card li { color: var(--text); }
+
+/* -------------------------
+   Page footer (outside card)
+   Simple muted site footer below the content card.
+   ------------------------- */
+.page-footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  padding: 12px 0;
+}
+
+/* -------------------------
+   Responsive adjustments
+   Make spacing tighter on small screens for a balanced look.
+   ------------------------- */
+@media (max-width: 700px) {
+  .container { padding: 12px; }
+  .topnav { padding: 8px; gap: 6px; }
+  .content-card { padding: 18px; }
+}
+
+
+/* ===============================
+   AUDIO PLAYER FIX + IMPROVEMENTS
+   =============================== */
+
+/* Base styling for audio player */
+audio {
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    margin: 15px 0;
+}
+
+/* Force full media controls to always show,
+   including the timeline/scrubber bar */
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: block !important;
+}
+
+
+
+/* =========================================================
+   Responsive YouTube Video Container
+   - Keeps 16:9 aspect ratio
+   - Prevents distortion
+   - Ensures iframe scales on mobile
+   - Fixes YouTube sizing issues
+   ========================================================= */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    margin: 18px 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

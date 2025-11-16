@@ -1,0 +1,148 @@
+/* =========================
+   WD_base.css
+   Purpose: Shared variables, resets, and base styles used by every page.
+   Short comments explain each block's role.
+   ========================= */
+
+/* -------------------------
+   Theme variables
+   Define colors, widths, and shadow used across files.
+   ------------------------- */
+:root {
+  --page-bg: #f1f3f5;       /* outer page background (light gray) */
+  --card-bg: #ffffff;       /* centered content card background */
+  --accent: #6ea8fe;        /* primary accent (light blue) */
+  --text: #1f2937;          /* primary page text (dark gray) */
+  --muted: #6b7280;         /* muted text color */
+  --shadow: 0 8px 24px rgba(31,41,55,0.08);
+  --max-width: 1100px;      /* max content width */
+}
+
+/* -------------------------
+   Reset & box-sizing
+   Make element sizing predictable across browsers.
+   ------------------------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+/* -------------------------
+   Base body styles
+   Page background, default font, and base text color.
+   ------------------------- */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------
+   Links & basic elements
+   Link color and hover; images and media default behavior.
+   ------------------------- */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img, video, audio, canvas { display: block; max-width: 100%; height: auto; }
+
+/* -------------------------
+   Lists & tables baseline
+   Clean spacing for lists and simple table styling.
+   ------------------------- */
+ul, ol { margin: 1em 0; padding-left: 1.25rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+th, td {
+  padding: 10px 12px;
+  border: 1px solid rgba(31,41,55,0.06);
+  text-align: left;
+}
+th { background: rgba(110,168,254,0.08); }
+
+/* -------------------------
+   Form controls baseline
+   Simple, consistent form control appearance.
+   ------------------------- */
+input, textarea, select, button {
+  font: inherit;
+  color: var(--text);
+  border: 1px solid rgba(31,41,55,0.12);
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #fff;
+}
+button { cursor: pointer; background: var(--accent); color: #fff; border: none; }
+button.secondary { background: transparent; color: var(--text); border: 1px solid rgba(31,41,55,0.08); }
+
+/* -------------------------
+   Layout utilities
+   .container centers page content; small helpers for images in icon boxes.
+   ------------------------- */
+.container {
+  width: 94%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.lead { font-size: 1.05rem; color: var(--muted); }
+.icon-box img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* -------------------------
+   Accessibility focus
+   Clear visible focus rings for keyboard users.
+   ------------------------- */
+:focus { outline: 3px solid rgba(110,168,254,0.35); outline-offset: 2px; }
+
+/* -------------------------
+   Responsive helpers
+   Slightly adjust container padding on smaller screens.
+   ------------------------- */
+@media (max-width: 900px) {
+  .container { width: 94%; padding: 18px 0; }
+}
+@media (max-width: 600px) {
+  .container { width: 96%; padding: 12px 0; }
+}
+
+
+
+/* ===============================
+   AUDIO PLAYER FIX + IMPROVEMENTS
+   =============================== */
+
+/* Base styling for audio player */
+audio {
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    margin: 15px 0;
+}
+
+/* Force full media controls to always show,
+   including the timeline/scrubber bar */
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: block !important;
+}
+
+
+
+/* Responsive YouTube Video */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
