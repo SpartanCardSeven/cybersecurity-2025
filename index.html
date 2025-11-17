@@ -1,108 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cybersecurity in 2025 - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Base shared styles -->
+    <title>Cybersecurity in 2025</title>
+
+    <!-- Global base styles -->
     <link rel="stylesheet" href="WD_base.css">
 
-    <!-- Home page layout styles (banner + icons) -->
-    <link rel="stylesheet" href="WD_layout1.css">
+    <!-- Home page layout styles -->
+    <link rel="stylesheet" href="WD_layout_home.css">
 </head>
 
 <body>
 
-<!-- ============================================================
-     Main Start Page Wrapper
-     ============================================================ -->
-<div class="start-wrapper">
+<div class="container">
 
-    <div class="start-card">
+    <!-- ================================================
+         HEADER BANNER
+         ================================================ -->
+    <header>
+        <img src="BannerStartPg.png" alt="Cybersecurity in 2025 Banner">
+    </header>
 
-        <!-- ============================
-             Banner
-             ============================ -->
-        <header>
-            <img src="BannerStartPg.png" alt="Cybersecurity in 2025 Banner">
-        </header>
+    <!-- ================================================
+         NAVIGATION GRID — All icons same size
+         ================================================ -->
+    <nav>
+        <a href="WD_Resources.html">
+            <img src="MagSource(WB).png" alt="Resources">
+        </a>
 
-        <!-- ============================
-             Icon Grid
-             ============================ -->
-        <div class="icon-grid">
+        <a href="WD_Security.html">
+            <img src="Shield2.png" alt="Security">
+        </a>
 
-            <!-- LARGE ICON ROW -->
-            <a href="WD_Resources.html" class="icon-large">
-                <img src="MagSource.png" alt="Resources">
-            </a>
+        <a href="WD_Tips.html">
+            <img src="Lightbulb.png" alt="Tips">
+        </a>
 
-            <a href="WD_Security.html" class="icon-large">
-                <img src="Shield2.png" alt="Security">
-            </a>
+        <a href="WD_Threats.html">
+            <img src="Virus.png" alt="Threats">
+        </a>
 
-            <a href="WD_Tips.html" class="icon-large">
-                <img src="Lightbulb.png" alt="Tips">
-            </a>
+        <a href="WD_CyberNews.html">
+            <img src="REPLACE.PNG" alt="Cyber News">
+        </a>
 
-            <!-- SMALL ICON ROW -->
-            <a href="WD_Threats.html" class="icon-small">
-                <img src="Virus.png" alt="Threats Icon">
-                <span>Threats</span>
-            </a>
+        <a href="WD_About.html">
+            <img src="REPLACE.PNG" alt="About Me">
+        </a>
+    </nav>
 
-            <a href="WD_CyberNews.html" class="icon-small">
-                <img src="REPLACE.PNG" alt="Cyber News Icon">
-                <span>Cyber News</span>
-            </a>
+    <!-- ================================================
+         FEEDBACK FORM
+         ================================================ -->
+    <section class="content-card">
+        <h1>Website Feedback</h1>
+        <p>Tell me what you think about the website and how I can improve it:</p>
 
-            <a href="WD_About.html" class="icon-small">
-                <img src="REPLACE.PNG" alt="About Me Icon">
-                <span>About Me</span>
-            </a>
+        <form action="#" method="post">
 
-        </div>
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" style="width:100%; padding:6px;"><br><br>
 
-        <!-- ====================================================
-             Website Feedback Form
-             Lets users review your site and suggest improvements.
-             ==================================================== -->
-        <section style="margin-top: 25px;">
-            <h2>Website Feedback</h2>
-            <p class="lead">How did you like the website? Your feedback helps me improve.</p>
+            <label for="rating">How would you rate this website?</label><br>
+            <select id="rating" name="rating" style="width:100%; padding:6px;">
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Poor">Poor</option>
+            </select><br><br>
 
-            <form action="#" method="post">
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" style="width:100%; padding:6px;"></textarea><br><br>
 
-                <!-- Rating -->
-                <label for="rating"><strong>Your Rating:</strong></label><br>
-                <input type="radio" name="rating" value="Excellent" /> Excellent<br>
-                <input type="radio" name="rating" value="Good" /> Good<br>
-                <input type="radio" name="rating" value="Average" /> Average<br>
-                <input type="radio" name="rating" value="Poor" /> Poor<br><br>
+            <input type="submit" value="Submit Feedback" style="padding:10px 18px;">
+        </form>
+    </section>
 
-                <!-- Text feedback -->
-                <label for="comments"><strong>Comments or Suggestions:</strong></label><br>
-                <textarea id="comments" name="comments" rows="4" style="width:100%;"></textarea><br><br>
-
-                <!-- Submit button -->
-                <button type="submit">Submit Feedback</button>
-            </form>
-        </section>
-
-        <!-- ============================
-             Footer
-             ============================ -->
-        <footer>
-            Tavish Skelton &bull; Web Design &bull; MACC
-        </footer>
-
-    </div>
+    <!-- Footer -->
+    <footer>
+        Tavish Skelton • Web Design • MACC
+    </footer>
 
 </div>
 
 </body>
 </html>
-
-
-
