@@ -78,15 +78,18 @@ body {
 
 /* Small text links styled as cards (second row) */
 .icon-small {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 48px;
   background: #fff;
   border-radius: 8px;
-  display: inline-flex;
+  display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(31,41,55,0.06);
-  padding: 10px;
+  justify-content: flex-start;
+  padding: 6px 10px;
+  box-shadow: 0 6px 14px rgba(31,41,55,0.05);
+  color: var(--text);
+  font-weight: 600;
   text-decoration: none;
 }
 .icon-small img { width: 40px; height: 40px; object-fit: contain; }
@@ -118,4 +121,3 @@ body {
   .icon-large { width: 110px; height: 110px; }
   .start-card header img { max-height: 140px; }
 }
-
