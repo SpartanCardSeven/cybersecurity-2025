@@ -49,17 +49,15 @@ body {
   box-shadow: 0 8px 20px rgba(31,41,55,0.06);
 }
 
-/* -------------------------
-   Icon grid
-   Flex-wrapped grid for large icons + small text links below.
-   ------------------------- */
+/* Perfect 3×2 grid for home icons */
 .icon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 icons per row */
+  gap: 22px;
+  justify-items: center;                  /* centers icons */
   margin: 18px 0 8px 0;
 }
+
 
 
 
@@ -125,4 +123,5 @@ body {
   .icon-large { width: 110px; height: 110px; }
   .start-card header img { max-height: 140px; }
 }
+
 
