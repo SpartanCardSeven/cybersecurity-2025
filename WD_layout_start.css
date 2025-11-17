@@ -1,123 +1,96 @@
-/* =========================
-   WD_layout1.css
-   Purpose: Styling for the Start (home) page: card wrapper, banner, and icon grid.
-   ========================= */
+/* ============================================================
+   WD_layout_home.css
+   Home page layout – uniform icons for all menu items
+   ============================================================ */
 
-/* -------------------------
-   Page basics
-   Ensure body uses base background and default font.
-   ------------------------- */
-@charset "utf-8";
+
+/* -------------------------------
+   Page container + background
+   ------------------------------- */
 body {
-  margin: 0;
-  background: var(--page-bg);
-  font-family: inherit;
-  color: var(--text);
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* -------------------------
-   Start wrapper & card
-   Creates a white centered card like your screenshot.
-   ------------------------- */
-.start-wrapper {
-  width: 94%;
-  max-width: var(--max-width);
-  margin: 28px auto;
-  padding: 0;
-}
-.start-card {
-  background: var(--card-bg);
-  border-radius: 8px;
-  padding: 18px;
-  box-shadow: var(--shadow);
-  overflow: visible;
+.container {
+    width: 95%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
 
-/* -------------------------
-   Banner inside card
-   Banner is smaller and constrained; keeps aspect ratio.
-   ------------------------- */
-.start-card header { text-align: center; margin-bottom: 12px; }
-.start-card header img {
-  width: 100%;
-  max-width: 980px;
-  max-height: 180px;     /* controls banner visual height */
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 8px 20px rgba(31,41,55,0.06);
+
+/* -------------------------------
+   Banner at top of homepage
+   ------------------------------- */
+header img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
 }
 
-/* -------------------------
-   Icon grid
-   Flex-wrapped grid for large icons + small text links below.
-   ------------------------- */
-.icon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px 22px;
-  margin: 18px 0 8px 0;
+
+/* -------------------------------
+   Uniform navigation grid
+   ALL icons = same size
+   ------------------------------- */
+nav {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 icons per row on desktop */
+    gap: 15px;
 }
 
-/* Large square icon cards (first row) */
-.icon-large {
-  width: 160px;
-  height: 160px;
-  background: #fff;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(31,41,55,0.06);
-  padding: 10px;
-  text-decoration: none;
-}
-.icon-large img { width: 100%; height: 100%; object-fit: contain; border-radius: 6px; }
-
-/* Small text links styled as cards (second row) */
-.icon-small {
-  width: 140px;
-  height: 48px;
-  background: #fff;
-  border-radius: 8px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 6px 10px;
-  box-shadow: 0 6px 14px rgba(31,41,55,0.05);
-  color: var(--text);
-  font-weight: 600;
-  text-decoration: none;
-}
-.icon-small img { width: 40px; height: 40px; object-fit: contain; }
-.icon-small span { font-size: 0.95rem; color: var(--text); }
-
-/* -------------------------
-   Card footer
-   Light separator and muted footer text inside the card.
-   ------------------------- */
-.start-card footer {
-  margin-top: 18px;
-  text-align: center;
-  padding-top: 12px;
-  border-top: 1px solid rgba(31,41,55,0.04);
-  color: var(--muted);
+nav a {
+    display: block;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,0.18);
+    transition: transform 0.15s;
 }
 
-/* -------------------------
-   Responsive tweaks
-   Reduce icon sizes and padding on smaller screens.
-   ------------------------- */
-@media (max-width: 700px) {
-  .icon-large { width: 130px; height: 130px; }
-  .icon-small { width: 100%; justify-content: center; }
-  .icon-grid { gap: 14px; }
-  .start-card { padding: 14px; }
+nav a:hover {
+    transform: scale(1.05);
 }
-@media (max-width: 420px) {
-  .icon-large { width: 110px; height: 110px; }
-  .start-card header img { max-height: 140px; }
+
+/* ICON SIZE — All uniform */
+nav img {
+    width: 100%;
+    height: 150px;        /* uniform height */
+    object-fit: contain;  /* preserves image shape */
+    background: #fafafa;
+    padding: 10px;
+}
+
+
+/* -------------------------------
+   Footer
+   ------------------------------- */
+footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.8em;
+    opacity: 0.75;
+}
+
+
+/* -------------------------------
+   Mobile adjustments
+   ------------------------------- */
+@media (max-width: 650px) {
+    nav {
+        grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
+    }
+
+    nav img {
+        height: 130px;
+    }
 }
