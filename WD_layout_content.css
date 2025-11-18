@@ -31,7 +31,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: i
   display: flex;
   justify-content: center;
   gap: 8px;
-  background: var(--accent);
+  background: #0067ff;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0 6px 18px rgba(31,41,55,0.04);
@@ -130,3 +130,4 @@ audio::-webkit-media-controls-time-remaining-display {
     height: 100%;
     border: none;
 }
+
