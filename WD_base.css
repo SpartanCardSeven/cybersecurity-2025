@@ -11,7 +11,7 @@
 :root {
   --page-bg: #007fff8f;       /* outer page background (light gray) */
   --card-bg: #ffffff;       /* centered content card background */
-  --accent: #6ea8fe;        /* primary accent (light blue) */
+  --accent: #003685;        /* primary accent (light blue) */
   --text: #1f2937;          /* primary page text (dark gray) */
   --muted: #6b7280;         /* muted text color */
   --shadow: 0 8px 24px rgba(31,41,55,0.08);
@@ -146,4 +146,5 @@ audio::-webkit-media-controls-time-remaining-display {
     height: 100%;
     border: none;
 }
+
 
