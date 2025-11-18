@@ -10,7 +10,7 @@
 @charset "utf-8";
 body {
   margin: 0;
-  background: var(--page-bg);
+  background: #007fff8f;
   font-family: inherit;
   color: var(--text);
 }
@@ -123,6 +123,7 @@ body {
   .icon-large { width: 110px; height: 110px; }
   .start-card header img { max-height: 140px; }
 }
+
 
 
 
